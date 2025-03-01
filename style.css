@@ -23,6 +23,39 @@ body {
     backdrop-filter: blur(80px);
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.header-actions button:hover {
+    color: #007bff;
+}
+
 .messages {
     flex: 1;
     overflow-y: auto;
@@ -83,6 +116,76 @@ body {
     background-color: #f1f3f5;
 }
 
+/* RAG Context Styles */
+.rag-context {
+    background-color: #e6f7ff !important;
+    border-left: 3px solid #1890ff;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.context-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1890ff;
+    border-bottom: 1px solid #91d5ff;
+    padding-bottom: 5px;
+}
+
+.context-content {
+    font-size: 0.9em;
+}
+
+/* Code Block Styles */
+.code-block {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.code-header {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 10px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.action-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background-color: #f1f3f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #e9ecef;
+}
+
+.action-icon {
+    font-size: 1.2em;
+}
+
 .input-container {
     display: flex;
     gap: 8px;
@@ -113,6 +216,16 @@ body {
 .input-container button:hover {
     background-color: #0056b3;
     backdrop-filter: blur(80px);
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
 }
 
 /* Media query for small screens */
@@ -148,6 +261,10 @@ body {
     .message-content {
         font-size: 15px;
         max-width: 100%;
+    }
+    
+    .action-bar {
+        flex-wrap: wrap;
     }
 }
 
@@ -198,6 +315,22 @@ body.dark-mode {
     backdrop-filter: blur(80px);
 }
 
+.dark-mode .header {
+    border-color: #444;
+}
+
+.dark-mode .header h1 {
+    color: #fff;
+}
+
+.dark-mode .header-actions button {
+    color: #ddd;
+}
+
+.dark-mode .header-actions button:hover {
+    color: #4dabf7;
+}
+
 .dark-mode .messages {
     background-color: #383838;
     border-color: #444;
@@ -232,6 +365,44 @@ body.dark-mode {
 
 .dark-mode .dropdown-item:hover {
     background-color: #383838;
+}
+
+.dark-mode .action-btn {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
+}
+
+.dark-mode .action-btn:hover {
+    background-color: #555;
+}
+
+.dark-mode .status-bar {
+    color: #aaa;
+    border-color: #444;
+}
+
+.dark-mode .rag-context {
+    background-color: #162d40 !important;
+    border-left: 3px solid #177ddc;
+}
+
+.dark-mode .context-header {
+    color: #40a9ff;
+    border-color: #153450;
+}
+
+.dark-mode .code-block {
+    background-color: #282c34;
+}
+
+.dark-mode .code-header {
+    background-color: #21252b;
+    color: #abb2bf;
+}
+
+.dark-mode .code-block pre {
+    color: #abb2bf;
 }
 
 /* 段落样式 */
@@ -299,4 +470,8 @@ body.dark-mode {
     font-size: 16px;
     color: #666;
     margin-bottom: 20px;
+}
+
+.dark-mode .loading {
+    color: #aaa;
 }
