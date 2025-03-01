@@ -9,9 +9,28 @@
 </head>
 <body>
     <div class="chat-container">
+        <div class="header">
+            <h1>周小琪Chat</h1>
+            <div class="header-actions">
+                <button id="theme-toggle" onclick="toggleTheme()" title="切换主题">
+                    <span class="theme-icon">🌓</span>
+                </button>
+            </div>
+        </div>
+        
         <div class="messages" id="messages"></div>
         <div id="loading" class="loading" style="display: none;">加载中...</div>
-        <div class="input-container">
+        
+        <div class="action-bar">
+            <button id="upload-btn" class="action-btn" onclick="uploadDocument()">
+                <span class="action-icon">📄</span> 上传文档
+            </button>
+            <button id="clear-btn" class="action-btn" onclick="clearRAGData()">
+                <span class="action-icon">🗑️</span> 清除数据
+            </button>
+        </div>
+        
+        <div class="input-container" id="chat-input-container">
             <input id="chat-input" type="text" placeholder="输入消息..." />
             <button onclick="sendMessage()">发送</button>
             <div class="dropdown">
@@ -20,11 +39,22 @@
                     <div class="dropdown-item" onclick="toggleTheme()">
                         <span>浅色/深色</span>
                     </div>
+                    <div class="dropdown-item" onclick="uploadDocument()">
+                        <span>上传文档</span>
+                    </div>
+                    <div class="dropdown-item" onclick="clearRAGData()">
+                        <span>清除数据</span>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <div class="status-bar">
+            <div id="document-status">未加载文档</div>
+            <div id="chunk-count">0 个片段</div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="rag-script.js"></script>
 </body>
 </html>
