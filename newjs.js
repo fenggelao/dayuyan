@@ -449,4 +449,4 @@ function toggleTheme() {
     const messages = document.querySelector('.messages');
     
     // Toggle container dark mode
-    chatContainer.classList.
+    chatContainer.classList}
